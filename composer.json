@@ -1,0 +1,23 @@
+{
+    "name": "janisgruzis/ssh-bundle",
+    "type": "symfony-bundle",
+    "description": "Ssh client for Symfony 2. Allows to define connections and use them as services.",
+    "keywords": ["ssh", "client", "symfony2", "bundle", "janisgruzis"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jānis Gruzis",
+            "homepage": "https://github.com/JanisGruzis"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "symfony/framework-bundle": "~2.0",
+        "herzult/php-ssh": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JanisGruzis\\SshBundle\\": ""
+        }
+    }
+}
