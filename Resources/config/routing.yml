@@ -1,3 +1,0 @@
-janis_gruzis_ssh_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: JanisGruzisSshBundle:Default:index }
