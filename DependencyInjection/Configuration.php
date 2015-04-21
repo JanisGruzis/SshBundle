@@ -18,11 +18,30 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('janis_gruzis_ssh');
+        $rootNode = $treeBuilder->root('janisgruzis_ssh');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+		$rootNode
+			->children()
+				->arrayNode('connections')
+					->children()
+						->scalarNode('host')
+							->isRequired()
+							->cannotBeEmpty()
+						->end()
+						->scalarNode('config')
+							->cannotBeEmpty()
+							->defaultValue('~/.ssh/config')
+						->end()
+						->scalarNode('username')
+							->cannotBeEmpty()
+						->end()
+						->scalarNode('password')
+							->cannotBeEmpty()
+						->end()
+					->end()
+				->end()
+			->end()
+		;
 
         return $treeBuilder;
     }
