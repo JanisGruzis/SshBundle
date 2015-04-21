@@ -42,3 +42,24 @@ class AppKernel extends Kernel
     // ...
 }
 ```
+
+Documentation
+============
+
+Documentation is stored in the `Resources/doc/index.md` file in this bundle:
+
+[Read the documentation](https://github.com/JanisGruzis/SshBundle/blob/master/Resources/doc/index.md)
+
+License
+============
+
+This bundle is under the MIT license. See the complete license in the bundle:
+
+```
+Resources/meta/LICENSE
+```
+
+About
+============
+
+Developed by Janis Gruzis to ease connection through ssh in Symfony2.
