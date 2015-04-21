@@ -41,6 +41,8 @@ class Configuration implements ConfigurationInterface
 							->scalarNode('username')->end()
 							->scalarNode('pass_phrase')->end()
 							->scalarNode('password')->end()
+							->scalarNode('hostname')->end()
+							->scalarNode('local_username')->end()
 						->end()
 					->end()
 				->end()

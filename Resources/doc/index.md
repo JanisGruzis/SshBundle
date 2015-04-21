@@ -54,6 +54,15 @@ janis_gruzis_ssh:
         	pass_phrase: bar # Optional
         	public_key_file: ./.ssh/id_dsa.pub
         	private_key_file: ./.ssh/id_dsa
+        hostbased:
+        	type: hostbased
+        	host: foo.com
+        	hostname: bar.foo.com
+        	username: foo
+        	pass_phrase: bar # Optional
+        	local_username: bar # Optional
+        	public_key_file: ./.ssh/id_dsa.pub
+        	private_key_file: ./.ssh/id_dsa
 ```
 
 Services

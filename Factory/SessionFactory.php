@@ -3,6 +3,7 @@
 namespace JanisGruzis\SshBundle\Factory;
 
 use Ssh\Authentication\Agent;
+use Ssh\Authentication\HostBasedFile;
 use Ssh\Authentication\Password;
 use Ssh\Authentication\None;
 use Ssh\Authentication\PublicKeyFile;
@@ -42,6 +43,9 @@ class SessionFactory
 				break;
 			case 'agent':
 				$session = self::getAgentSession($config);
+				break;
+			case 'hostbased':
+				$session = self::getHostbasedSession($config);
 				break;
 		}
 
@@ -111,6 +115,25 @@ class SessionFactory
 			$config['public_key_file'],
 			$config['private_key_file'],
 			isset($config['pass_phrase']) ? $config['pass_phrase'] : null
+		);
+
+		return new Session($configuration, $authentication);
+	}
+
+	/**
+	 * @param $config
+	 * @return Session
+	 */
+	protected static function getHostbasedSession($config)
+	{
+		$configuration = new Configuration($config['host']);
+		$authentication = new HostBasedFile(
+			$config['username'],
+			$config['hostname'],
+			$config['public_key_file'],
+			$config['private_key_file'],
+			isset($config['pass_phrase']) ? $config['pass_phrase'] : null,
+			isset($config['local_username']) ? $config['local_username'] : null
 		);
 
 		return new Session($configuration, $authentication);
