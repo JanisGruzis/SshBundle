@@ -22,7 +22,31 @@ class JanisGruzisSshExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
+		$this->loadSshConnections($config, $container);
+
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }
+
+	/**
+	 * Load SSH services from configuration into container.
+	 * @param array $config
+	 * @param ContainerBuilder $container
+	 */
+	protected function loadSshConnections(array $config, ContainerBuilder $container)
+	{
+		if (!isset($config['connections']))
+		{
+			return;
+		}
+
+		foreach ($config['connections'] as $name => $connectionConfig)
+		{
+			$serviceName = sprintf('ssh.session.%s', $name);
+			$container->register($serviceName, 'Ssh\Session')
+				->setFactory(['%ssh.session.factory.class%', 'getSession'])
+				->setArguments([$connectionConfig])
+			;
+		}
+	}
 }

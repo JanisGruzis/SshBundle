@@ -1,4 +1,4 @@
+parameters:
+    ssh.session.factory.class: JanisGruzis\SshBundle\Factory\SessionFactory
+
 services:
-#    janis_gruzis_ssh.example:
-#        class: JanisGruzis\SshBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
