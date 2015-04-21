@@ -23,6 +23,7 @@ class Configuration implements ConfigurationInterface
 		$rootNode
 			->children()
 				->arrayNode('connections')
+					->useAttributeAsKey('name')
 					->children()
 						->scalarNode('host')
 							->isRequired()
