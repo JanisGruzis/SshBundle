@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/JanisGruzis/SshBundle.svg)](https://travis-ci.org/JanisGruzis/SshBundle)
 
-Installation
+Installationss
 ============
 
 Step 1: Download the Bundle
