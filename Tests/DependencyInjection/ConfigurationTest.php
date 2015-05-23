@@ -3,11 +3,17 @@
 namespace JanisGruzis\SshBundle\Tests\Controller;
 
 use JanisGruzis\SshBundle\DependencyInjection\Configuration;
-use JanisGruzis\SshBundle\DependencyInjection\JanisGruzisSshExtension;
 
 class ConfigurationTest extends \PHPUnit_Framework_TestCase
 {
     public function testGetConfigTreeBuilder()
     {
+		$configuration = new Configuration();
+		$treeBuilder = $configuration->getConfigTreeBuilder();
+
+		$this->assertInstanceOf(
+			'Symfony\\Component\\Config\\Definition\\Builder\\TreeBuilder',
+			$treeBuilder
+		);
     }
 }

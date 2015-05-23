@@ -29,7 +29,14 @@ class Configuration implements ConfigurationInterface
 							->scalarNode('type')
 								->isRequired()
 								->validate()
-								->ifNotInArray(['public_key', 'none', 'password', 'config', 'agent'])
+								->ifNotInArray([
+									'public_key',
+									'none',
+									'password',
+									'config',
+									'agent',
+									'hostbased'
+								])
 									->thenInvalid('Invalid ssh connection type.')
 								->end()
 							->end()

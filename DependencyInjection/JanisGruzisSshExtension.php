@@ -35,11 +35,6 @@ class JanisGruzisSshExtension extends Extension
 	 */
 	protected function loadSshConnections(array $config, ContainerBuilder $container)
 	{
-		if (!isset($config['connections']))
-		{
-			return;
-		}
-
 		foreach ($config['connections'] as $name => $connectionConfig)
 		{
 			$serviceName = sprintf('ssh.session.%s', $name);
