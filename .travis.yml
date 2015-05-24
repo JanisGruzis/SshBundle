@@ -7,7 +7,8 @@ php:
 
 before_install:
     - composer selfupdate
-    - sudo apt-get install libssh2-php
+    - sudo apt-get update
+    - sudo apt-get install -y libssh2-php
 
 install: composer update --prefer-dist --no-interaction
 
