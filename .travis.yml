@@ -9,7 +9,7 @@ before_install:
     - composer selfupdate
     - sudo apt-get update
     - sudo apt-get install libssh2-1 libssh2-1-dev
-    - pecl install ssh2 channel://pecl.php.net/ssh2-0.12
+    - printf "\n" | pecl install ssh2 channel://pecl.php.net/ssh2-0.12
     - phpenv config-add php.ini
 
 install: composer update --prefer-dist --no-interaction
