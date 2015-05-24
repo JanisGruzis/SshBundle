@@ -8,9 +8,9 @@ php:
 before_install:
     - composer selfupdate
     - sudo apt-get update
-    - sudo apt-get install -y libssh2-php
+    - sudo apt-get install libssh2-1 libssh2-1-dev
+    - pecl install ssh2
     - phpenv config-add php.ini
-    - sudo service apache2 restart
 
 install: composer update --prefer-dist --no-interaction
 
