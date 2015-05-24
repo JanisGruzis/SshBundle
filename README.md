@@ -1,6 +1,4 @@
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/99a1cf13-9ac1-4cad-9fe6-478c8a6bda1c/big.png)](https://insight.sensiolabs.com/projects/99a1cf13-9ac1-4cad-9fe6-478c8a6bda1c)
-
-[![Build Status](https://travis-ci.org/JanisGruzis/SshBundle.svg)](https://travis-ci.org/JanisGruzis/SshBundle)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/99a1cf13-9ac1-4cad-9fe6-478c8a6bda1c/big.png)](https://insight.sensiolabs.com/projects/99a1cf13-9ac1-4cad-9fe6-478c8a6bda1c) [![Build Status](https://travis-ci.org/JanisGruzis/SshBundle.svg)](https://travis-ci.org/JanisGruzis/SshBundle)
 
 Installation
 ============
@@ -12,7 +10,7 @@ Open a command console, enter your project directory and execute the
 following command to download the latest stable version of this bundle:
 
 ```bash
-$ composer require "janisgruzis/ssh-bundle" "dev-master"
+composer require janisgruzis/ssh-bundle
 ```
 
 This command requires you to have Composer installed globally, as explained
