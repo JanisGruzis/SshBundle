@@ -17,11 +17,12 @@ class JanisGruzisSshExtensionTest extends \PHPUnit_Framework_TestCase
 		$container = new ContainerBuilder();
 		$extension = new JanisGruzisSshExtension();
 		$extension->load($config, $container);
+		
+		$containerServices = $container->getServiceIds();
+		$services = sort($services);
+		$containerServices = sort($containerServices);
 
-		$this->assertEquals(
-			sort($services),
-			sort($container->getServiceIds())
-		);
+		$this->assertEquals($services, $containerServices);
 
 		foreach ($services as $service)
 		{
